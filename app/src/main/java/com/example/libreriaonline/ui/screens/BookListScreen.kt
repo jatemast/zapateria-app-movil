@@ -1,5 +1,7 @@
 package com.example.libreriaonline.ui.screens
 import com.example.libreriaonline.AuthResult
+import com.example.libreriaonline.AuthViewModel
+import androidx.compose.material.icons.filled.ExitToApp
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -23,7 +25,8 @@ import com.example.libreriaonline.model.Libro
 @Composable
 fun BookListScreen(
     navController: NavController,
-    bookViewModel: BookViewModel = hiltViewModel()
+    bookViewModel: BookViewModel = hiltViewModel(),
+    authViewModel: AuthViewModel = hiltViewModel()
 ) {
     val bookListResult by bookViewModel.books.collectAsState()
     val libros = if (bookListResult is AuthResult.Success) (bookListResult as AuthResult.Success).data else emptyList()
@@ -35,6 +38,14 @@ fun BookListScreen(
                 actions = {
                     IconButton(onClick = { navController.navigate("profile") }) {
                         Icon(Icons.Default.AccountCircle, contentDescription = "Perfil")
+                    }
+                    IconButton(onClick = {
+                        authViewModel.logout()
+                        navController.navigate("login") {
+                            popUpTo("book_list") { inclusive = true }
+                        }
+                    }) {
+                        Icon(Icons.Default.ExitToApp, contentDescription = "Cerrar Sesión")
                     }
                 }
             )
