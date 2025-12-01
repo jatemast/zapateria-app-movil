@@ -15,7 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.libreriaonline.AuthResult
 import com.example.libreriaonline.AuthViewModel
@@ -24,7 +24,7 @@ import com.example.libreriaonline.repository.AuthRepository
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = viewModel(factory = AuthViewModelFactory(AuthRepository()))) {
+fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = hiltViewModel()) {
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
