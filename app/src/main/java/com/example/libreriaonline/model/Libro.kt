@@ -4,14 +4,24 @@ import com.google.gson.annotations.SerializedName
 
 data class Libro(
     val id: Int,
-    val titulo: String,
-    @SerializedName("autor_id") val autorId: Int,
-    @SerializedName("categoria_id") val categoriaId: Int,
-    val isbn: String,
-    val editorial: String,
-    val precio: Double,
-    val stock: Int,
-    @SerializedName("fecha_publicacion") val fechaPublicacion: String,
-    val descripcion: String?,
-    val imagen: String?
+    val name: String,
+    val quantity: Int,
+    val price: String, // Cambiado a String según la respuesta de la API
+    val image_url: String,
+    val created_at: String,
+    val updated_at: String
+)
+
+data class BookCreateRequest(
+    val name: String,
+    val quantity: Int,
+    val price: Double,
+    val image: String // Base64 string
+)
+
+data class BookUpdateRequest(
+    val name: String? = null,
+    val quantity: Int? = null,
+    val price: Double? = null,
+    val image: String? = null // Base64 string
 )

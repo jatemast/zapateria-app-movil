@@ -37,12 +37,11 @@ fun ProfileScreen(navController: NavController, authViewModel: AuthViewModel = h
                 val user = (userState as AuthResult.Success).data
                 name = user.name
                 email = user.email
-                authViewModel.resetUserState()
             }
             is AuthResult.Error -> {
                 val errorMessage = (userState as AuthResult.Error).message
                 Toast.makeText(context, "Error al cargar perfil: $errorMessage", Toast.LENGTH_LONG).show()
-                authViewModel.resetUserState()
+                authViewModel.resetUserState() // Resetear solo en caso de error
             }
             else -> {}
         }
@@ -53,6 +52,7 @@ fun ProfileScreen(navController: NavController, authViewModel: AuthViewModel = h
             is AuthResult.Success -> {
                 Toast.makeText(context, "Perfil actualizado con éxito", Toast.LENGTH_SHORT).show()
                 authViewModel.resetUserUpdateState()
+                authViewModel.getUser() // Recargar los datos del usuario después de una actualización exitosa
             }
             is AuthResult.Error -> {
                 val errorMessage = (userUpdateState as AuthResult.Error).message

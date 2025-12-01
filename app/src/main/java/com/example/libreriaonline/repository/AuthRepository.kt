@@ -30,8 +30,12 @@ class AuthRepository @Inject constructor(
         return response
     }
 
-    fun logout() {
-        tokenManager.deleteToken()
+    suspend fun logout(): Response<Map<String, String>> {
+        val response = apiService.logout()
+        if (response.isSuccessful) {
+            tokenManager.deleteToken()
+        }
+        return response
     }
 
     suspend fun getUser(): Response<User> {

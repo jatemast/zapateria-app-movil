@@ -38,7 +38,8 @@ import javax.inject.Inject
                 if (response.isSuccessful) {
                     _registrationState.value = AuthResult.Success(Unit)
                 } else {
-                    _registrationState.value = AuthResult.Error(response.errorBody()?.string() ?: "Error desconocido")
+                    val errorMessage = response.errorBody()?.string() ?: "Error desconocido"
+                    _registrationState.value = AuthResult.Error(errorMessage)
                 }
             } catch (e: Exception) {
                 _registrationState.value = AuthResult.Error(e.localizedMessage ?: "Error de red")
@@ -91,6 +92,14 @@ import javax.inject.Inject
             } catch (e: Exception) {
                 _loginState.value = AuthResult.Error(e.localizedMessage ?: "Error de red")
             }
+        }
+    }
+
+    fun logout() {
+        viewModelScope.launch {
+            repository.logout()
+            // No es necesario manejar la respuesta aquí directamente, solo asegurar que el token se elimine.
+            // Si la API devuelve un mensaje de éxito, se puede añadir aquí.
         }
     }
 
