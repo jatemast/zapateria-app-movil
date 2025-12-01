@@ -588,8 +588,7 @@ public final class DaggerLibreriaOnlineApplication_HiltComponents_SingletonC {
     }
 
     @Override
-    public void injectLibreriaOnlineApplication(
-        LibreriaOnlineApplication libreriaOnlineApplication) {
+    public void injectLibreriaOnlineApplication(LibreriaOnlineApplication arg0) {
     }
 
     @Override

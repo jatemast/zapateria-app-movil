@@ -1,5 +1,6 @@
 package com.example.libreriaonline.ui.screens;
 
+import com.example.libreriaonline.AuthResult;
 import androidx.compose.foundation.layout.*;
 import androidx.compose.material.icons.Icons;
 import androidx.compose.material3.*;

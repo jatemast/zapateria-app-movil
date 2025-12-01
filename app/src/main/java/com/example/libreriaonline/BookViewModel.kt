@@ -3,7 +3,6 @@ package com.example.libreriaonline
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.libreriaonline.model.BookCreateRequest
-import com.example.libreriaonline.model.BookUpdateRequest
 import com.example.libreriaonline.model.Libro
 import com.example.libreriaonline.repository.BookRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -82,11 +81,15 @@ class BookViewModel @Inject constructor(
         }
     }
 
+    fun setSelectedBook(libro: Libro?) {
+        _selectedBook.value = if (libro == null) AuthResult.Idle else AuthResult.Success(libro)
+    }
+
     fun createBook(request: BookCreateRequest) {
         viewModelScope.launch {
             _bookOperationState.value = AuthResult.Loading
             try {
-                val response = bookRepository.createLibro(request)
+                val response = bookRepository.createBook(request)
                 if (response.isSuccessful) {
                     _bookOperationState.value = AuthResult.Success(Unit)
                     fetchBooks()
@@ -99,11 +102,11 @@ class BookViewModel @Inject constructor(
         }
     }
 
-    fun updateBook(id: Int, request: BookUpdateRequest) {
+    fun updateBook(id: Int, request: BookCreateRequest) {
         viewModelScope.launch {
             _bookOperationState.value = AuthResult.Loading
             try {
-                val response = bookRepository.updateLibro(id, request)
+                val response = bookRepository.updateBook(id, request)
                 if (response.isSuccessful) {
                     _bookOperationState.value = AuthResult.Success(Unit)
                     fetchBooks()

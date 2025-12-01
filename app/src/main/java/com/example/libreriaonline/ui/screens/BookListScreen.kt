@@ -1,4 +1,5 @@
 package com.example.libreriaonline.ui.screens
+import com.example.libreriaonline.AuthResult
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -24,7 +25,8 @@ fun BookListScreen(
     navController: NavController,
     bookViewModel: BookViewModel = hiltViewModel()
 ) {
-    val libros by bookViewModel.libros.collectAsState()
+    val bookListResult by bookViewModel.books.collectAsState()
+    val libros = if (bookListResult is AuthResult.Success) (bookListResult as AuthResult.Success).data else emptyList()
 
     Scaffold(
         topBar = {
@@ -52,7 +54,7 @@ fun BookListScreen(
         ) {
             items(libros) { libro ->
                 BookListItem(libro = libro) {
-                    bookViewModel.setSelectedLibro(libro)
+                    bookViewModel.setSelectedBook(libro)
                     navController.navigate("book_detail/${libro.id}")
                 }
             }
@@ -70,9 +72,10 @@ fun BookListItem(libro: Libro, onClick: () -> Unit) {
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-            Text(text = libro.titulo, style = MaterialTheme.typography.headlineSmall)
+            Text(text = libro.name, style = MaterialTheme.typography.headlineSmall)
             Spacer(modifier = Modifier.height(4.dp))
-            Text(text = "ISBN: ${libro.isbn}", style = MaterialTheme.typography.bodyMedium)
+            Text(text = "Cantidad: ${libro.quantity}", style = MaterialTheme.typography.bodyMedium)
+            Text(text = "Precio: ${libro.price}", style = MaterialTheme.typography.bodyMedium)
         }
     }
 }

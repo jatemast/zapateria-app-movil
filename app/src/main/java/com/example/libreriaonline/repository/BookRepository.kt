@@ -2,7 +2,6 @@ package com.example.libreriaonline.repository
 
 import com.example.libreriaonline.api.ApiService
 import com.example.libreriaonline.model.BookCreateRequest
-import com.example.libreriaonline.model.BookUpdateRequest
 import com.example.libreriaonline.model.Libro
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -23,12 +22,12 @@ class BookRepository @Inject constructor(private val apiService: ApiService) {
         return apiService.getLibro(id)
     }
 
-    suspend fun createLibro(request: BookCreateRequest): Response<Libro> {
-        return apiService.createLibro(request)
+    suspend fun createBook(request: BookCreateRequest): Response<Libro> {
+        return apiService.createBook(request)
     }
 
-    suspend fun updateLibro(id: Int, request: BookUpdateRequest): Response<Libro> {
-        return apiService.updateLibro(id, request)
+    suspend fun updateBook(id: Int, request: BookCreateRequest): Response<Libro> {
+        return apiService.updateBook(id, request)
     }
 
     suspend fun deleteLibro(id: Int): Response<Unit> {

@@ -196,37 +196,6 @@ fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = 
             Spacer(modifier = Modifier.height(16.dp))
         }
 
-        OutlinedTextField(
-            value = email,
-            onValueChange = { email = it },
-            label = { Text("Email") },
-            leadingIcon = { Icon(Icons.Default.Email, contentDescription = "Email") },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-
-        OutlinedTextField(
-            value = password,
-            onValueChange = { password = it },
-            label = { Text("Contraseña") },
-            leadingIcon = { Icon(Icons.Default.Lock, contentDescription = "Contraseña") },
-            visualTransformation = PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-
-        OutlinedTextField(
-            value = passwordConfirmation,
-            onValueChange = { passwordConfirmation = it },
-            label = { Text("Confirmar Contraseña") },
-            leadingIcon = { Icon(Icons.Default.Lock, contentDescription = "Confirmar Contraseña") },
-            visualTransformation = PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(16.dp))
 
         Button(
             onClick = {
@@ -258,3 +227,4 @@ fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = 
             Text("¿Ya tienes una cuenta? Inicia sesión")
         }
     }
+}

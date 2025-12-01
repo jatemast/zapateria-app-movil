@@ -46,7 +46,7 @@ fun AppNavigation() {
     val navController = rememberNavController()
     val authViewModel: AuthViewModel = hiltViewModel()
 
-    NavHost(navController = navController, startDestination = "login") { // Cambiado a "login" para autenticación
+    NavHost(navController = navController, startDestination = "book_list") {
         composable("login") {
             LoginScreen(navController = navController, authViewModel = authViewModel)
         }
@@ -70,20 +70,10 @@ fun AppNavigation() {
         }
         composable(
             "book_add_edit/{bookId}",
-            arguments = listOf(navArgument("bookId") {
-                type = NavType.IntType
-                defaultValue = -1 // Indicador para "nuevo libro"
-            })
+            arguments = listOf(navArgument("bookId") { type = NavType.IntType; defaultValue = -1 })
         ) { backStackEntry ->
             val bookId = backStackEntry.arguments?.getInt("bookId")
-            BookAddEditScreen(
-                navController = navController,
-                bookId = if (bookId == -1) null else bookId,
-                bookViewModel = hiltViewModel()
-            )
-        }
-        composable("book_add_edit") { // Ruta sin ID para añadir
-            BookAddEditScreen(navController = navController, bookViewModel = hiltViewModel())
+            BookAddEditScreen(navController = navController, bookId = if (bookId == -1) null else bookId, bookViewModel = hiltViewModel())
         }
     }
 }

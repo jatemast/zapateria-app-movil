@@ -1,7 +1,6 @@
 package com.example.libreriaonline.api
 
 import com.example.libreriaonline.model.BookCreateRequest
-import com.example.libreriaonline.model.BookUpdateRequest
 import com.example.libreriaonline.model.Libro
 import com.example.libreriaonline.model.LoginRequest
 import com.example.libreriaonline.model.LoginResponse
@@ -37,10 +36,10 @@ interface ApiService {
     suspend fun getLibro(@Path("id") id: Int): Response<Libro>
 
     @POST("books")
-    suspend fun createLibro(@Body request: BookCreateRequest): Response<Libro>
+    suspend fun createBook(@Body request: BookCreateRequest): Response<Libro>
 
     @PUT("books/{id}")
-    suspend fun updateLibro(@Path("id") id: Int, @Body request: BookUpdateRequest): Response<Libro>
+    suspend fun updateBook(@Path("id") id: Int, @Body request: BookCreateRequest): Response<Libro>
 
     @DELETE("books/{id}")
     suspend fun deleteLibro(@Path("id") id: Int): Response<Unit>

@@ -17,6 +17,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.libreriaonline.BookViewModel
+import com.example.libreriaonline.AuthResult
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -25,31 +26,43 @@ fun BookDetailScreen(
     bookId: Int,
     bookViewModel: BookViewModel = hiltViewModel()
 ) {
-    val libro by bookViewModel.selectedLibro.collectAsState()
+    val libro by bookViewModel.selectedBook.collectAsState(initial = null)
 
     LaunchedEffect(bookId) {
-        bookViewModel.fetchLibro(bookId)
+        bookViewModel.fetchBook(bookId)
     }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(libro?.titulo ?: "Detalle del Libro") },
+                title = {
+                    val currentLibroState = libro
+                    Text(
+                        when (currentLibroState) {
+                            is AuthResult.Success -> currentLibroState.data.name
+                            else -> "Detalle del Libro"
+                        }
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Atrás")
                     }
                 },
                 actions = {
-                    libro?.let {
+                    val currentLibroState = libro
+                    if (currentLibroState is AuthResult.Success) {
+                        val currentLibro = currentLibroState.data
+
                         IconButton(onClick = {
-                            bookViewModel.setSelectedLibro(it) // Set for editing
-                            navController.navigate("book_add_edit/${it.id}")
+                            bookViewModel.setSelectedBook(currentLibro)
+                            navController.navigate("book_add_edit/${currentLibro.id}")
                         }) {
                             Icon(Icons.Default.Edit, contentDescription = "Editar")
                         }
+
                         IconButton(onClick = {
-                            bookViewModel.deleteLibro(it.id)
+                            bookViewModel.deleteBook(currentLibro.id)
                             navController.popBackStack()
                         }) {
                             Icon(Icons.Default.Delete, contentDescription = "Eliminar")
@@ -59,37 +72,84 @@ fun BookDetailScreen(
             )
         }
     ) { paddingValues ->
-        libro?.let {
-            Column(
-                modifier = Modifier
-                    .padding(paddingValues)
-                    .fillMaxSize()
-                    .padding(16.dp)
-            ) {
-                AsyncImage(
-                    model = it.imagen,
-                    contentDescription = "Imagen del libro",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp),
-                    contentScale = ContentScale.Fit
-                )
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(text = "Título: ${it.titulo}", style = MaterialTheme.typography.headlineMedium)
-                Text(text = "Autor ID: ${it.autorId}", style = MaterialTheme.typography.bodyLarge)
-                Text(text = "Categoría ID: ${it.categoriaId}", style = MaterialTheme.typography.bodyLarge)
-                Text(text = "ISBN: ${it.isbn}", style = MaterialTheme.typography.bodyLarge)
-                Text(text = "Editorial: ${it.editorial}", style = MaterialTheme.typography.bodyLarge)
-                Text(text = "Precio: ${it.precio}", style = MaterialTheme.typography.bodyLarge)
-                Text(text = "Stock: ${it.stock}", style = MaterialTheme.typography.bodyLarge)
-                Text(text = "Fecha Publicación: ${it.fechaPublicacion}", style = MaterialTheme.typography.bodyLarge)
-                it.descripcion?.let { desc ->
-                    Text(text = "Descripción: $desc", style = MaterialTheme.typography.bodyLarge)
+        val currentLibroState = libro
+
+        when (currentLibroState) {
+            is AuthResult.Loading -> {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = androidx.compose.ui.Alignment.Center
+                ) {
+                    CircularProgressIndicator()
                 }
             }
-        } ?: run {
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) {
-                CircularProgressIndicator()
+
+            is AuthResult.Success -> {
+                val currentLibro = currentLibroState.data
+
+                Column(
+                    modifier = Modifier
+                        .padding(paddingValues)
+                        .fillMaxSize()
+                        .padding(16.dp)
+                ) {
+                    AsyncImage(
+                        model = currentLibro.imageUrl,
+                        contentDescription = "Imagen del libro",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp),
+                        contentScale = ContentScale.Fit
+                    )
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Text(
+                        text = "Nombre: ${currentLibro.name}",
+                        style = MaterialTheme.typography.headlineMedium
+                    )
+                    Text(
+                        text = "Cantidad: ${currentLibro.quantity}",
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                    Text(
+                        text = "Precio: ${currentLibro.price}",
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                    Text(
+                        text = "Creado en: ${currentLibro.createdAt ?: "N/A"}",
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                    Text(
+                        text = "Actualizado en: ${currentLibro.updatedAt ?: "N/A"}",
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                }
+            }
+
+            is AuthResult.Error -> {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = androidx.compose.ui.Alignment.Center
+                ) {
+                    Text(
+                        text = "Error al cargar el libro: ${currentLibroState.message}",
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = MaterialTheme.colorScheme.error
+                    )
+                }
+            }
+
+            AuthResult.Idle, null -> {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = androidx.compose.ui.Alignment.Center
+                ) {
+                    Text(
+                        text = "Cargando detalle del libro...",
+                        style = MaterialTheme.typography.headlineSmall
+                    )
+                }
             }
         }
     }
