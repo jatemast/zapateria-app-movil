@@ -1,7 +1,8 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("com.android.application") version "8.1.0"
+    id("org.jetbrains.kotlin.android") version "1.9.0"
     id("com.google.dagger.hilt.android")
+    kotlin("kapt") version "1.9.0"
 }
 
 android {
@@ -79,9 +80,10 @@ kapt {
      implementation("androidx.navigation:navigation-compose:2.7.5")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-compiler:2.51.1")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     // Coil
     implementation("io.coil-kt:coil-compose:2.4.0")
+}
