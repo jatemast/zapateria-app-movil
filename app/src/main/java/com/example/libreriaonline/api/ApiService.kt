@@ -1,0 +1,36 @@
+package com.example.libreriaonline.api
+
+import com.example.libreriaonline.model.Libro
+import com.example.libreriaonline.model.LoginRequest
+import com.example.libreriaonline.model.LoginResponse
+import com.example.libreriaonline.model.RegistroRequest
+import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.DELETE
+import retrofit2.http.GET
+import retrofit2.http.PATCH
+import retrofit2.http.PUT
+import retrofit2.http.Path
+ 
+ interface ApiService {
+     @POST("register")
+     suspend fun register(@Body request: RegistroRequest): Response<Unit>
+ 
+     @POST("login")
+     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
+ 
+     @GET("api/libros")
+     suspend fun getLibros(): Response<List<Libro>>
+ 
+     @GET("api/libros/{id}")
+     suspend fun getLibro(@Path("id") id: Int): Response<Libro>
+ 
+     @POST("api/libros")
+     suspend fun createLibro(@Body libro: Libro): Response<Libro>
+ 
+     @PUT("api/libros/{id}")
+     suspend fun updateLibro(@Path("id") id: Int, @Body libro: Libro): Response<Libro>
+ 
+     @DELETE("api/libros/{id}")
+     suspend fun deleteLibro(@Path("id") id: Int): Response<Unit>
+}
