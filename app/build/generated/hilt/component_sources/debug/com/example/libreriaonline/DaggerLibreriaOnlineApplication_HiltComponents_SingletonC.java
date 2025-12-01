@@ -444,15 +444,15 @@ public final class DaggerLibreriaOnlineApplication_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_example_libreriaonline_BookViewModel = "com.example.libreriaonline.BookViewModel";
-
       static String com_example_libreriaonline_AuthViewModel = "com.example.libreriaonline.AuthViewModel";
 
-      @KeepFieldType
-      BookViewModel com_example_libreriaonline_BookViewModel2;
+      static String com_example_libreriaonline_BookViewModel = "com.example.libreriaonline.BookViewModel";
 
       @KeepFieldType
       AuthViewModel com_example_libreriaonline_AuthViewModel2;
+
+      @KeepFieldType
+      BookViewModel com_example_libreriaonline_BookViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
@@ -588,7 +588,8 @@ public final class DaggerLibreriaOnlineApplication_HiltComponents_SingletonC {
     }
 
     @Override
-    public void injectLibreriaOnlineApplication(LibreriaOnlineApplication arg0) {
+    public void injectLibreriaOnlineApplication(
+        LibreriaOnlineApplication libreriaOnlineApplication) {
     }
 
     @Override

@@ -19,6 +19,7 @@ import com.example.libreriaonline.ui.screens.BookAddEditScreen
 import com.example.libreriaonline.ui.screens.BookDetailScreen
 import com.example.libreriaonline.ui.screens.BookListScreen
 import com.example.libreriaonline.ui.screens.LoginScreen
+import com.example.libreriaonline.ui.screens.ProfileScreen
 import com.example.libreriaonline.ui.screens.RegisterScreen
 import com.example.libreriaonline.ui.theme.LibreriaOnlineAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -54,6 +55,9 @@ fun AppNavigation() {
         }
         composable("book_list") {
             BookListScreen(navController = navController, bookViewModel = hiltViewModel())
+        }
+        composable("profile") {
+            ProfileScreen(navController = navController, authViewModel = authViewModel)
         }
         composable(
             "book_detail/{bookId}",

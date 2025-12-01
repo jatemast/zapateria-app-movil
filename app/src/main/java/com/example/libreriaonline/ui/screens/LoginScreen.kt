@@ -35,8 +35,9 @@ fun LoginScreen(navController: NavController, authViewModel: AuthViewModel = hil
                 val token = (loginState as AuthResult.Success).data.token
                 Toast.makeText(context, "Login exitoso. Token: $token", Toast.LENGTH_SHORT).show()
                 authViewModel.resetLoginState()
-                // Aquí podrías navegar a la pantalla principal de la app
-                // Por ejemplo: navController.navigate("home")
+                navController.navigate("book_list") {
+                    popUpTo("login") { inclusive = true }
+                }
             }
             is AuthResult.Error -> {
                 val errorMessage = (loginState as AuthResult.Error).message

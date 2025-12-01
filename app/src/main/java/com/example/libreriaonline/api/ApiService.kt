@@ -4,10 +4,14 @@ import com.example.libreriaonline.model.Libro
 import com.example.libreriaonline.model.LoginRequest
 import com.example.libreriaonline.model.LoginResponse
 import com.example.libreriaonline.model.RegistroRequest
+import com.example.libreriaonline.model.User
+import com.example.libreriaonline.model.UserUpdateRequest
+import com.example.libreriaonline.model.UserUpdateResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -34,4 +38,10 @@ import retrofit2.http.Path
  
      @DELETE("api/libros/{id}")
      suspend fun deleteLibro(@Path("id") id: Int): Response<Unit>
+
+    @GET("api/user")
+    suspend fun getUser(): Response<User>
+
+    @PUT("api/user")
+    suspend fun updateUser(@Body request: UserUpdateRequest): Response<UserUpdateResponse>
 }

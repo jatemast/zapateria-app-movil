@@ -4,6 +4,9 @@ import com.example.libreriaonline.api.ApiService
 import com.example.libreriaonline.model.LoginRequest
 import com.example.libreriaonline.model.LoginResponse
 import com.example.libreriaonline.model.RegistroRequest
+import com.example.libreriaonline.model.User
+import com.example.libreriaonline.model.UserUpdateRequest
+import com.example.libreriaonline.model.UserUpdateResponse
 import com.example.libreriaonline.util.TokenManager
 import retrofit2.Response
 import javax.inject.Inject
@@ -29,5 +32,13 @@ class AuthRepository @Inject constructor(
 
     fun logout() {
         tokenManager.deleteToken()
+    }
+
+    suspend fun getUser(): Response<User> {
+        return apiService.getUser()
+    }
+
+    suspend fun updateUser(request: UserUpdateRequest): Response<UserUpdateResponse> {
+        return apiService.updateUser(request)
     }
 }
