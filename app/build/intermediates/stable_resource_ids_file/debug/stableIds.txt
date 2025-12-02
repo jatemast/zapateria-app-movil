@@ -1,3 +1,4 @@
+com.example.libreriaonline:xml/network_security_config = 0x7f0e0002
 com.example.libreriaonline:xml/data_extraction_rules = 0x7f0e0001
 com.example.libreriaonline:styleable/StateListDrawable = 0x7f0d0016
 com.example.libreriaonline:styleable/SignInButton = 0x7f0d0015

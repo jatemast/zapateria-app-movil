@@ -13,7 +13,7 @@ import javax.inject.Singleton
 @Singleton
 class RetrofitClient @Inject constructor(private val tokenManager: TokenManager) {
 
-    private val BASE_URL = "https://lemonchiffon-boar-634911.hostingersite.com/api/"
+    private val BASE_URL = "https://bibliotecaitesg.online/api/"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)

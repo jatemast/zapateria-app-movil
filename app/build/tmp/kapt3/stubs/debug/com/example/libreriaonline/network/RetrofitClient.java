@@ -16,7 +16,7 @@ public final class RetrofitClient {
     @org.jetbrains.annotations.NotNull
     private final com.example.libreriaonline.util.TokenManager tokenManager = null;
     @org.jetbrains.annotations.NotNull
-    private final java.lang.String BASE_URL = "https://lemonchiffon-boar-634911.hostingersite.com/api/";
+    private final java.lang.String BASE_URL = "https://bibliotecaitesg.online/api/";
     @org.jetbrains.annotations.NotNull
     private final okhttp3.logging.HttpLoggingInterceptor loggingInterceptor = null;
     @org.jetbrains.annotations.NotNull
