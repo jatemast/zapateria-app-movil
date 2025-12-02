@@ -1,7 +1,12 @@
 package com.example.libreriaonline.ui.screens
 
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
+import android.location.Location
+import android.webkit.JavascriptInterface
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -19,6 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -26,12 +32,6 @@ import com.example.libreriaonline.AuthResult
 import com.example.libreriaonline.AuthViewModel
 import com.example.libreriaonline.model.RegistroRequest
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.model.CameraPosition
-import com.google.android.gms.maps.model.LatLng
-import com.google.maps.android.compose.GoogleMap
-import com.google.maps.android.compose.Marker
-import com.google.maps.android.compose.MarkerState
-import com.google.maps.android.compose.rememberCameraPositionState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,9 +44,18 @@ fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = 
     var longitude by remember { mutableStateOf("0.0") }
     val registrationState by authViewModel.registrationState.collectAsState()
     val context = LocalContext.current
+    val webView = remember { WebView(context) }
+    val webAppInterface = remember {
+        WebAppInterface(context) { lat, lng ->
+            latitude = lat.toString()
+            longitude = lng.toString()
+        }
+    }
 
     // Permisos de ubicación
     val locationPermissionsGranted = remember { mutableStateOf(false) }
+    var initialLocationSet by remember { mutableStateOf(false) }
+
     val requestPermissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
@@ -57,15 +66,25 @@ fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = 
         }
     }
 
-    // Inicializar Google Maps
-    val singapore = LatLng(1.35, 103.87)
-    val cameraPositionState = rememberCameraPositionState {
-        position = CameraPosition.fromLatLngZoom(singapore, 10f)
+    // Solicitar permisos y obtener la última ubicación
+    LaunchedEffect(locationPermissionsGranted.value) {
+        if (locationPermissionsGranted.value && !initialLocationSet) {
+            val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
+            fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+                location?.let {
+                    latitude = it.latitude.toString()
+                    longitude = it.longitude.toString()
+                    // Si el WebView ya está cargado, actualiza la ubicación
+                    if (webView.url?.contains("leaflet_map.html") == true) {
+                        webView.evaluateJavascript("setInitialLocation(${it.latitude}, ${it.longitude});", null)
+                    }
+                    initialLocationSet = true
+                }
+            }
+        }
     }
-    var selectedLocation by remember { mutableStateOf(singapore) }
 
     LaunchedEffect(Unit) {
-        // Solicitar permisos al inicio
         when {
             ContextCompat.checkSelfPermission(
                 context,
@@ -83,19 +102,6 @@ fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = 
                         Manifest.permission.ACCESS_COARSE_LOCATION
                     )
                 )
-            }
-        }
-
-        // Obtener última ubicación conocida si los permisos están concedidos
-        if (locationPermissionsGranted.value) {
-            val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-            fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-                location?.let {
-                    selectedLocation = LatLng(it.latitude, it.longitude)
-                    cameraPositionState.position = CameraPosition.fromLatLngZoom(selectedLocation, 10f)
-                    latitude = it.latitude.toString()
-                    longitude = it.longitude.toString()
-                }
             }
         }
     }
@@ -167,27 +173,49 @@ fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = 
         )
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Mapa para seleccionar ubicación
+        // Mapa para seleccionar ubicación (Leaflet a través de WebView)
         Text("Selecciona tu ubicación:", style = MaterialTheme.typography.titleMedium)
         Spacer(modifier = Modifier.height(8.dp))
         if (locationPermissionsGranted.value) {
-            GoogleMap(
+            AndroidView(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(200.dp),
-                cameraPositionState = cameraPositionState,
-                onMapClick = { latLng ->
-                    selectedLocation = latLng
-                    latitude = latLng.latitude.toString()
-                    longitude = latLng.longitude.toString()
+                factory = {
+                    webView.apply {
+                        settings.javaScriptEnabled = true
+                        webViewClient = object : WebViewClient() {
+                            override fun onReceivedError(
+                                view: WebView?,
+                                errorCode: Int,
+                                description: String?,
+                                failingUrl: String?
+                            ) {
+                                Toast.makeText(context, "Error cargando el mapa: $description", Toast.LENGTH_LONG).show()
+                            }
+
+                            override fun onPageFinished(view: WebView?, url: String?) {
+                                super.onPageFinished(view, url)
+                                if (url?.contains("leaflet_map.html") == true && initialLocationSet) {
+                                    view?.evaluateJavascript("setInitialLocation($latitude, $longitude);", null)
+                                }
+                            }
+                        }
+                        webChromeClient = object : android.webkit.WebChromeClient() {
+                            override fun onConsoleMessage(consoleMessage: android.webkit.ConsoleMessage?): Boolean {
+                                android.util.Log.d("WebViewConsole", "${consoleMessage?.message()} -- From line ${consoleMessage?.lineNumber()} of ${consoleMessage?.sourceId()}")
+                                return super.onConsoleMessage(consoleMessage)
+                            }
+                        }
+                        addJavascriptInterface(webAppInterface, "Android")
+                        loadUrl("file:///android_asset/leaflet_map.html")
+                        WebView.setWebContentsDebuggingEnabled(true)
+                    }
+                },
+                update = {
+                    // No es necesario actualizar el WebView aquí, ya que el estado se maneja a través de JavascriptInterface
                 }
-            ) {
-                Marker(
-                    state = MarkerState(position = selectedLocation),
-                    title = "Ubicación seleccionada",
-                    snippet = "Lat: ${selectedLocation.latitude}, Lng: ${selectedLocation.longitude}"
-                )
-            }
+            )
             Spacer(modifier = Modifier.height(8.dp))
             Text("Latitud: $latitude, Longitud: $longitude")
             Spacer(modifier = Modifier.height(16.dp))
@@ -195,7 +223,6 @@ fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = 
             Text("Permisos de ubicación no concedidos. No se puede mostrar el mapa.")
             Spacer(modifier = Modifier.height(16.dp))
         }
-
 
         Button(
             onClick = {
@@ -226,5 +253,12 @@ fun RegisterScreen(navController: NavController, authViewModel: AuthViewModel = 
         TextButton(onClick = { navController.popBackStack() }) {
             Text("¿Ya tienes una cuenta? Inicia sesión")
         }
+    }
+}
+
+class WebAppInterface(private val mContext: Context, private val onMapClickListener: (Double, Double) -> Unit) {
+    @JavascriptInterface
+    fun onMapClick(lat: Double, lng: Double) {
+        onMapClickListener(lat, lng)
     }
 }

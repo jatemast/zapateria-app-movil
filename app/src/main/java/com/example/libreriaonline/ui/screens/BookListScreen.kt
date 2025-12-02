@@ -1,4 +1,5 @@
 package com.example.libreriaonline.ui.screens
+
 import com.example.libreriaonline.AuthResult
 import com.example.libreriaonline.AuthViewModel
 import androidx.compose.material.icons.filled.ExitToApp
@@ -14,12 +15,17 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.libreriaonline.BookViewModel
 import com.example.libreriaonline.model.Libro
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -30,8 +36,30 @@ fun BookListScreen(
 ) {
     val bookListResult by bookViewModel.books.collectAsState()
     val libros = if (bookListResult is AuthResult.Success) (bookListResult as AuthResult.Success).data else emptyList()
+    val purchaseState by bookViewModel.purchaseState.collectAsState()
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+
+    LaunchedEffect(purchaseState) {
+        when (purchaseState) {
+            is AuthResult.Success -> {
+                scope.launch {
+                    snackbarHostState.showSnackbar("Compra exitosa: ${(purchaseState as AuthResult.Success).data}")
+                }
+                bookViewModel.resetPurchaseState()
+            }
+            is AuthResult.Error -> {
+                scope.launch {
+                    snackbarHostState.showSnackbar("Error al comprar: ${(purchaseState as AuthResult.Error).message}")
+                }
+                bookViewModel.resetPurchaseState()
+            }
+            else -> {}
+        }
+    }
 
     Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
                 title = { Text("Libros") },
@@ -64,7 +92,7 @@ fun BookListScreen(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(libros) { libro ->
-                BookListItem(libro = libro) {
+                BookListItem(libro = libro, bookViewModel = bookViewModel) {
                     bookViewModel.setSelectedBook(libro)
                     navController.navigate("book_detail/${libro.id}")
                 }
@@ -74,7 +102,7 @@ fun BookListScreen(
 }
 
 @Composable
-fun BookListItem(libro: Libro, onClick: () -> Unit) {
+fun BookListItem(libro: Libro, bookViewModel: BookViewModel, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -87,6 +115,13 @@ fun BookListItem(libro: Libro, onClick: () -> Unit) {
             Spacer(modifier = Modifier.height(4.dp))
             Text(text = "Cantidad: ${libro.quantity}", style = MaterialTheme.typography.bodyMedium)
             Text(text = "Precio: ${libro.price}", style = MaterialTheme.typography.bodyMedium)
+            Spacer(modifier = Modifier.height(8.dp))
+            Button(
+                onClick = { bookViewModel.purchaseBook(libro.id) },
+                modifier = Modifier.align(Alignment.End)
+            ) {
+                Text("Comprar")
+            }
         }
     }
 }
