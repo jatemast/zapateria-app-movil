@@ -48,11 +48,17 @@ fun AppNavigation() {
     val navController = rememberNavController()
     val authViewModel: AuthViewModel = hiltViewModel()
 
-    val isAuthenticated = authViewModel.loginState.collectAsState().value is AuthResult.Success
+    val loginState = authViewModel.loginState.collectAsState().value
 
-    val startDestination = if (isAuthenticated) "book_list" else "login"
+    LaunchedEffect(loginState) {
+        if (loginState is AuthResult.Success) {
+            navController.navigate("book_list") {
+                popUpTo("login") { inclusive = true }
+            }
+        }
+    }
 
-    NavHost(navController = navController, startDestination = startDestination) {
+    NavHost(navController = navController, startDestination = "login") {
         composable("login") {
             LoginScreen(navController = navController, authViewModel = authViewModel)
         }
