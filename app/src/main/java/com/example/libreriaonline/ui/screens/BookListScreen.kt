@@ -3,7 +3,6 @@ package com.example.libreriaonline.ui.screens
 import com.example.libreriaonline.AuthResult
 import com.example.libreriaonline.AuthViewModel
 import androidx.compose.material.icons.filled.ExitToApp
-
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -23,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import coil.compose.AsyncImage
 import com.example.libreriaonline.BookViewModel
 import com.example.libreriaonline.model.Libro
 import kotlinx.coroutines.launch
@@ -78,11 +78,6 @@ fun BookListScreen(
                 }
             )
         },
-        floatingActionButton = {
-            FloatingActionButton(onClick = { navController.navigate("book_add_edit") }) {
-                Icon(Icons.Default.Add, contentDescription = "Añadir libro")
-            }
-        }
     ) { paddingValues ->
         LazyColumn(
             modifier = Modifier
@@ -111,6 +106,15 @@ fun BookListItem(libro: Libro, bookViewModel: BookViewModel, onClick: () -> Unit
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
+            AsyncImage(
+                model = libro.imageUrl,
+                contentDescription = "Imagen del libro: ${libro.name}",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp) // Ajusta la altura según sea necesario
+                    .align(Alignment.CenterHorizontally)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
             Text(text = libro.name, style = MaterialTheme.typography.headlineSmall)
             Spacer(modifier = Modifier.height(4.dp))
             Text(text = "Cantidad: ${libro.quantity}", style = MaterialTheme.typography.bodyMedium)
