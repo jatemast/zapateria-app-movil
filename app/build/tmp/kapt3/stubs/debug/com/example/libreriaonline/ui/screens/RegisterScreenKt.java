@@ -4,9 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.webkit.JavascriptInterface;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Toast;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.compose.foundation.layout.*;
@@ -24,6 +21,11 @@ import com.example.libreriaonline.AuthResult;
 import com.example.libreriaonline.AuthViewModel;
 import com.example.libreriaonline.model.RegistroRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.maps.android.compose.MarkerState;
+import com.google.maps.android.compose.MapProperties;
+import com.google.maps.android.compose.MapType;
 
 @kotlin.Metadata(mv = {1, 9, 0}, k = 2, xi = 48, d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u001a\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007\u00a8\u0006\u0006"}, d2 = {"RegisterScreen", "", "navController", "Landroidx/navigation/NavController;", "authViewModel", "Lcom/example/libreriaonline/AuthViewModel;", "app_debug"})
 public final class RegisterScreenKt {

@@ -11,190 +11,195 @@
 11    <uses-permission android:name="android.permission.INTERNET" />
 11-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:5:5-67
 11-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:5:22-64
-12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-12-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:6:5-79
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:6:5-78
 12-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:6:22-76
-13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-13-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:7:5-81
-13-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:7:22-78
-14
-15    <!-- Include required permissions for Google Maps API to run. -->
-16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:23:5-79
-16-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:23:22-76
-17
-18    <uses-feature
-18-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
-19        android:glEsVersion="0x00020000"
-19-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
-20        android:required="true" />
-20-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+14-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:8:5-81
+14-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:8:22-78
+15
+16    <uses-feature
+16-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:26:5-28:35
+17        android:glEsVersion="0x00020000"
+17-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:27:9-41
+18        android:required="true" />
+18-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:28:9-32
+19
+20    <queries>
+20-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
 21
-22    <queries>
-22-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:30:5-34:15
-23
-24        <!-- Needs to be explicitly declared on Android R+ -->
-25        <package android:name="com.google.android.apps.maps" />
-25-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
-25-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
-26    </queries>
-27
-28    <permission
-28-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
-29        android:name="com.example.libreriaonline.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-29-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
-30        android:protectionLevel="signature" />
-30-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+22        <!-- Needs to be explicitly declared on Android R+ -->
+23        <package android:name="com.google.android.apps.maps" />
+23-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:9-64
+23-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:33:18-61
+24    </queries>
+25
+26    <permission
+26-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+27        android:name="com.example.libreriaonline.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+27-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+28        android:protectionLevel="signature" />
+28-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+29
+30    <uses-permission android:name="com.example.libreriaonline.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+30-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+30-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
 31
-32    <uses-permission android:name="com.example.libreriaonline.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-32-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
-32-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
-33
-34    <application
-34-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:9:5-29:19
-35        android:name="com.example.libreriaonline.LibreriaOnlineApplication"
-35-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:10:9-50
-36        android:allowBackup="true"
-36-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:11:9-35
-37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-37-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
-38        android:dataExtractionRules="@xml/data_extraction_rules"
-38-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:12:9-65
-39        android:debuggable="true"
-40        android:extractNativeLibs="false"
-41        android:fullBackupContent="@xml/backup_rules"
-41-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:13:9-54
-42        android:icon="@mipmap/ic_launcher"
-42-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:14:9-43
-43        android:networkSecurityConfig="@xml/network_security_config"
-43-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:18:9-69
-44        android:roundIcon="@mipmap/ic_launcher_round"
-44-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:15:9-54
-45        android:supportsRtl="true"
-45-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:16:9-35
-46        android:theme="@style/Theme.LibreriaOnlineApp" >
-46-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:17:9-55
-47        <activity
-47-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:20:9-28:20
-48            android:name="com.example.libreriaonline.MainActivity"
-48-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:21:13-41
-49            android:exported="true"
-49-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:22:13-36
-50            android:theme="@style/Theme.LibreriaOnlineApp" >
-50-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:23:13-59
-51            <intent-filter>
-51-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:24:13-27:29
-52                <action android:name="android.intent.action.MAIN" />
-52-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:25:17-69
-52-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:25:25-66
-53
-54                <category android:name="android.intent.category.LAUNCHER" />
-54-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:26:17-77
-54-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:26:27-74
-55            </intent-filter>
-56        </activity>
-57        <!-- Needs to be explicitly declared on P+ -->
-58        <uses-library
-58-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
-59            android:name="org.apache.http.legacy"
-59-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
-60            android:required="false" />
-60-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
-61
-62        <activity
-62-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\c5098fad32e67cdd41c900ef37a7aa2e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
-63            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-63-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\c5098fad32e67cdd41c900ef37a7aa2e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
-64            android:exported="false"
-64-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\c5098fad32e67cdd41c900ef37a7aa2e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
-65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-65-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\c5098fad32e67cdd41c900ef37a7aa2e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
-66
-67        <meta-data
-67-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\1f7a32a30a4caa856543debcc4b44985\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-68            android:name="com.google.android.gms.version"
-68-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\1f7a32a30a4caa856543debcc4b44985\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-69            android:value="@integer/google_play_services_version" />
-69-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\1f7a32a30a4caa856543debcc4b44985\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-70
-71        <activity
-71-->[androidx.compose.ui:ui-test-manifest:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9790c5753f9573dbea09cf4c31ee830d\transformed\jetified-ui-test-manifest-1.5.1\AndroidManifest.xml:23:9-25:39
-72            android:name="androidx.activity.ComponentActivity"
-72-->[androidx.compose.ui:ui-test-manifest:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9790c5753f9573dbea09cf4c31ee830d\transformed\jetified-ui-test-manifest-1.5.1\AndroidManifest.xml:24:13-63
-73            android:exported="true" />
-73-->[androidx.compose.ui:ui-test-manifest:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9790c5753f9573dbea09cf4c31ee830d\transformed\jetified-ui-test-manifest-1.5.1\AndroidManifest.xml:25:13-36
-74        <activity
-74-->[androidx.compose.ui:ui-tooling-android:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\ade9257bd723a373e30ae09703c7c69c\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
-75            android:name="androidx.compose.ui.tooling.PreviewActivity"
-75-->[androidx.compose.ui:ui-tooling-android:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\ade9257bd723a373e30ae09703c7c69c\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
-76            android:exported="true" />
-76-->[androidx.compose.ui:ui-tooling-android:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\ade9257bd723a373e30ae09703c7c69c\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
-77
-78        <provider
-78-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
-79            android:name="androidx.startup.InitializationProvider"
-79-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:25:13-67
-80            android:authorities="com.example.libreriaonline.androidx-startup"
-80-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:26:13-68
-81            android:exported="false" >
-81-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:27:13-37
-82            <meta-data
-82-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
-83                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-83-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:30:17-75
-84                android:value="androidx.startup" />
-84-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:31:17-49
-85            <meta-data
-85-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9f8202d07581c5e7fa6a627781350420\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-86                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-86-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9f8202d07581c5e7fa6a627781350420\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-87                android:value="androidx.startup" />
-87-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9f8202d07581c5e7fa6a627781350420\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-88            <meta-data
-88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-89                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-90                android:value="androidx.startup" />
-90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-91        </provider>
-92
-93        <receiver
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-94            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-95            android:directBootAware="false"
-95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-96            android:enabled="true"
-96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-97            android:exported="true"
-97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-98            android:permission="android.permission.DUMP" >
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-99            <intent-filter>
-99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-100                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-101            </intent-filter>
-102            <intent-filter>
-102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-103                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-104            </intent-filter>
-105            <intent-filter>
-105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-106                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-107            </intent-filter>
-108            <intent-filter>
-108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-109                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-110            </intent-filter>
-111        </receiver>
-112    </application>
-113
-114</manifest>
+32    <application
+32-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:10:5-34:19
+33        android:name="com.example.libreriaonline.LibreriaOnlineApplication"
+33-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:11:9-50
+34        android:allowBackup="true"
+34-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:12:9-35
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.10.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\03597fcdf9f3d08a07401b57bd78e930\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+36        android:dataExtractionRules="@xml/data_extraction_rules"
+36-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:13:9-65
+37        android:debuggable="true"
+38        android:extractNativeLibs="false"
+39        android:fullBackupContent="@xml/backup_rules"
+39-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:14:9-54
+40        android:icon="@mipmap/ic_launcher"
+40-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:15:9-43
+41        android:networkSecurityConfig="@xml/network_security_config"
+41-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:19:9-69
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:16:9-54
+43        android:supportsRtl="true"
+43-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:17:9-35
+44        android:theme="@style/Theme.LibreriaOnlineApp" >
+44-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:18:9-55
+45        <meta-data
+45-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:22:9-24:71
+46            android:name="com.google.android.geo.API_KEY"
+46-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:23:13-58
+47            android:value="AIzaSyDSUfZOT6mdBhPQSs8ve5OL1vrgGvLo-EE" />
+47-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:24:13-68
+48
+49        <activity
+49-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:25:9-33:20
+50            android:name="com.example.libreriaonline.MainActivity"
+50-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:26:13-41
+51            android:exported="true"
+51-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:27:13-36
+52            android:theme="@style/Theme.LibreriaOnlineApp" >
+52-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:28:13-59
+53            <intent-filter>
+53-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:29:13-32:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:30:17-69
+54-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:30:25-66
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:31:17-77
+56-->C:\Users\Javier Teheran M\Documents\LibreriaOnlineApp\app\src\main\AndroidManifest.xml:31:27-74
+57            </intent-filter>
+58        </activity>
+59        <!-- Needs to be explicitly declared on P+ -->
+60        <uses-library
+60-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:39:9-41:40
+61            android:name="org.apache.http.legacy"
+61-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:40:13-50
+62            android:required="false" />
+62-->[com.google.android.gms:play-services-maps:18.2.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\4f39be4c0161236a0e049df4bc049258\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:41:13-37
+63
+64        <activity
+64-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\c5098fad32e67cdd41c900ef37a7aa2e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+65            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+65-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\c5098fad32e67cdd41c900ef37a7aa2e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+66            android:exported="false"
+66-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\c5098fad32e67cdd41c900ef37a7aa2e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+67            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+67-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\c5098fad32e67cdd41c900ef37a7aa2e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+68
+69        <meta-data
+69-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\1f7a32a30a4caa856543debcc4b44985\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+70            android:name="com.google.android.gms.version"
+70-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\1f7a32a30a4caa856543debcc4b44985\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+71            android:value="@integer/google_play_services_version" />
+71-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\1f7a32a30a4caa856543debcc4b44985\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+72
+73        <activity
+73-->[androidx.compose.ui:ui-test-manifest:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9790c5753f9573dbea09cf4c31ee830d\transformed\jetified-ui-test-manifest-1.5.1\AndroidManifest.xml:23:9-25:39
+74            android:name="androidx.activity.ComponentActivity"
+74-->[androidx.compose.ui:ui-test-manifest:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9790c5753f9573dbea09cf4c31ee830d\transformed\jetified-ui-test-manifest-1.5.1\AndroidManifest.xml:24:13-63
+75            android:exported="true" />
+75-->[androidx.compose.ui:ui-test-manifest:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9790c5753f9573dbea09cf4c31ee830d\transformed\jetified-ui-test-manifest-1.5.1\AndroidManifest.xml:25:13-36
+76        <activity
+76-->[androidx.compose.ui:ui-tooling-android:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\ade9257bd723a373e30ae09703c7c69c\transformed\jetified-ui-tooling-release\AndroidManifest.xml:23:9-25:39
+77            android:name="androidx.compose.ui.tooling.PreviewActivity"
+77-->[androidx.compose.ui:ui-tooling-android:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\ade9257bd723a373e30ae09703c7c69c\transformed\jetified-ui-tooling-release\AndroidManifest.xml:24:13-71
+78            android:exported="true" />
+78-->[androidx.compose.ui:ui-tooling-android:1.5.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\ade9257bd723a373e30ae09703c7c69c\transformed\jetified-ui-tooling-release\AndroidManifest.xml:25:13-36
+79
+80        <provider
+80-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
+81            android:name="androidx.startup.InitializationProvider"
+81-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:25:13-67
+82            android:authorities="com.example.libreriaonline.androidx-startup"
+82-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:26:13-68
+83            android:exported="false" >
+83-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:27:13-37
+84            <meta-data
+84-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
+85                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+85-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:30:17-75
+86                android:value="androidx.startup" />
+86-->[androidx.emoji2:emoji2:1.4.0] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\27e301876c2a241813adbaf58ea02490\transformed\jetified-emoji2-1.4.0\AndroidManifest.xml:31:17-49
+87            <meta-data
+87-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9f8202d07581c5e7fa6a627781350420\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+88                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+88-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9f8202d07581c5e7fa6a627781350420\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+89                android:value="androidx.startup" />
+89-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\9f8202d07581c5e7fa6a627781350420\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+90            <meta-data
+90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+91                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+92                android:value="androidx.startup" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+93        </provider>
+94
+95        <receiver
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+96            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+97            android:directBootAware="false"
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+98            android:enabled="true"
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+99            android:exported="true"
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+100            android:permission="android.permission.DUMP" >
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+101            <intent-filter>
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+102                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+103            </intent-filter>
+104            <intent-filter>
+104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+105                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+106            </intent-filter>
+107            <intent-filter>
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+108                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+109            </intent-filter>
+110            <intent-filter>
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+111                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Javier Teheran M\.gradle\caches\transforms-3\2f4b2a3143a8c92cbdd14dc715e6049a\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+112            </intent-filter>
+113        </receiver>
+114    </application>
+115
+116</manifest>
